@@ -1,0 +1,22 @@
+parameters:
+  linux:
+    system:
+      user:
+        mhoshino:
+          enabled: true
+          name: mhoshino
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Machi Hoshino
+          home: /home/mhoshino
+          email: mhoshino@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        mhoshino:
+          enabled: true
+          public_keys: ${public_keys:mhoshino}
+          user: ${linux:system:user:mhoshino}
+  public_keys:
+    mhoshino:
+      - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCx8KKR/xx/O3Uk7918Ft8B3J6O+Ux6g8QDp1IILn3oI0HYPoBu2x2rdCANZw5GysNh2+w2mtyyNQsZm14xVS4dw58nec2LoNE/8w6cZ1p9/IyeFPLXqF6C+r6Yg63ANeQUYkbPjMgmDILWdAa5NN3a6hQduAcYOiD75BUg1f1SHF33J2THwuZO5Al5DOg1//tq5+WLs337auWXLMfWEY9DSVTdnX6M/zJoTsZ+yDz/4vXXt64T1KuNfU/lucgYNUlfq/UnE1vryIa+hiykCc56GH0V7HHckg7y6+LW4bEEUJyZSlNo4QzfY/2Lp9cie5drhT78ZSQubiSbDoaTSu4d
